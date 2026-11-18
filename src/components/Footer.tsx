@@ -1,0 +1,142 @@
+import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, ArrowUpRight, Globe, ShieldCheck } from 'lucide-react';
+import logo from '../logo.png';
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="border-t border-slate-200 bg-slate-900 text-slate-100 pt-20 pb-10 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6">
+            <Link to="/" className="flex items-center group">
+              <img 
+                src={logo} 
+                alt="YOU KNOW SOCIETY Logo" 
+                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(59,130,246,0.3)]" 
+                referrerPolicy="no-referrer" 
+              />
+            </Link>
+            <p className="text-slate-300 text-xs leading-relaxed max-w-xs">
+              YOU KNOW SOCIETY est un groupe holding technologique international spécialisé dans le numérique, l'innovation, la formation, le développement technologique et la transformation digitale.
+            </p>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-[10px] font-mono font-bold text-blue-300">
+              <Globe size={12} /> SÉNÉGAL • AFRIQUE • MONDE ENTIER
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-extrabold mb-6 text-slate-400 uppercase tracking-widest text-[10px] font-mono">Expertises & Formations</h4>
+            <ul className="space-y-3">
+              {[
+                { name: 'Développement Web & Applications', path: '/services' },
+                { name: 'Applications Développées (Catalogue)', path: '/applications' },
+                { name: 'Intelligence Artificielle & IA', path: '/services' },
+                { name: 'Logiciel SaaS SASTOCK', path: '/applications' },
+                { name: 'Formations YOU KNOW ACADEMY', path: '/services' },
+                { name: 'Informatique Bureautique', path: '/' },
+                { name: 'Transformation Digitale & Media', path: '/services' },
+              ].map((item, idx) => (
+                <li key={idx}>
+                  <Link to={item.path} className="text-slate-300 hover:text-white transition-colors text-xs flex items-center gap-1.5 group">
+                    <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-blue-400" />
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-extrabold mb-6 text-slate-400 uppercase tracking-widest text-[10px] font-mono">Structure du Groupe</h4>
+            <ul className="space-y-3">
+              {[
+                { name: 'À propos de YOU KNOW SOCIETY', path: '/about' },
+                { name: 'Communauté YOU KNOW (Ateliers & Rencontres)', path: '/community' },
+                { name: 'Grand Forum (Discussions Ouvertes)', path: '/forum' },
+                { name: 'Écosystème & Partenaires (Feselma, SDM...)', path: '/partners' },
+                { name: 'YOU KNOW TECH (SaaS & IA)', path: '/subsidiaries' },
+                { name: 'YOU KNOW COMMERCE & FINANCE', path: '/subsidiaries' },
+                { name: 'YOU KNOW EDUCATION', path: '/subsidiaries' },
+                { name: 'YOU KNOW AUTO & MOBILITÉ', path: '/subsidiaries' },
+                { name: 'Études de Cas & Réalisations', path: '/cases' },
+              ].map((item, idx) => (
+                <li key={idx}>
+                  <Link to={item.path} className="text-slate-300 hover:text-white transition-colors text-xs flex items-center gap-1.5 group">
+                    <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-blue-400" />
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-extrabold mb-6 text-slate-400 uppercase tracking-widest text-[10px] font-mono">Coordonnées Officielles</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Mail size={16} className="text-blue-400 shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Email Général</span>
+                  <a href="mailto:contact@youknow.click" className="text-xs text-slate-200 hover:text-blue-300 font-mono transition-colors">contact@youknow.click</a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Groupe WhatsApp Communauté</span>
+                  <a href="https://chat.whatsapp.com/LKrTO2fUd6J18oEu8H2soZ?s=sh&p=a&ilr=1" target="_blank" rel="noopener noreferrer" className="text-xs text-emerald-300 hover:text-emerald-200 font-bold transition-colors">Rejoindre le Groupe WhatsApp</a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone size={16} className="text-blue-400 shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Ligne Directe / Contact</span>
+                  <a href="https://wa.me/221702007285" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-200 hover:text-blue-300 font-mono transition-colors">+221 70 200 72 85</a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Globe size={16} className="text-blue-400 shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Site Web Officiel</span>
+                  <a href="https://youknow.click" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline font-mono">https://youknow.click</a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin size={16} className="text-blue-400 shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Présence Globale</span>
+                  <span className="text-xs text-slate-200">Sénégal, Afrique & International</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+            <p className="text-slate-400 text-[11px] font-bold">
+              &copy; {currentYear} YOU KNOW SOCIETY. Tous droits réservés.
+            </p>
+            <span className="hidden sm:inline text-slate-600">•</span>
+            <p className="text-xs font-serif italic text-blue-300">
+              "Where Knowledge Meets Innovation."
+            </p>
+          </div>
+          <div className="flex gap-6 text-[10px] text-slate-400 uppercase font-mono font-bold tracking-widest">
+            <Link to="/about" className="hover:text-white transition-colors">Politique Qualité</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Accès Partenaires</Link>
+            <Link to="/admin" className="hover:text-blue-400 text-slate-500 transition-colors flex items-center gap-1">
+              <span>YOUKNOW</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
