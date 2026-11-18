@@ -424,13 +424,13 @@ export default function Applications() {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
-            Découvrez nos applications développées pour transformer vos activités : le package de développement officiel <strong className="text-amber-400">YOUKNOW-DevApp</strong>, la solution de gestion de stock <strong className="text-emerald-400">SASTOCK</strong> et l'application budgétaire <strong className="text-blue-400">MonBudget</strong>.
+            Découvrez nos applications développées pour transformer vos activités : <strong className="text-cyan-400">VISE</strong> pour le suivi des projets et la gestion financière, le package de développement officiel <strong className="text-amber-400">YOUKNOW-DevApp</strong>, <strong className="text-emerald-400">SASTOCK</strong> et <strong className="text-blue-400">MonBudget</strong>.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-400">
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg">
               <CheckCircle2 size={13} className="text-emerald-400" />
-              <span>{apps.length} Solutions Actives</span>
+              <span>{apps.length + 1} Solutions Actives</span>
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg">
               <Archive size={13} className="text-amber-400" />
@@ -446,6 +446,45 @@ export default function Applications() {
 
       {/* Main Content Area */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+
+        {/* VISE: Project and finance management with client project tracking */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/60 p-6 sm:p-9 shadow-xl"
+        >
+          <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+          <div className="relative z-10 flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-3xl space-y-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-400/10 text-cyan-300">
+                  <Layers size={22} />
+                </span>
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-300">
+                  Gestion de projets &amp; finances
+                </span>
+                <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2.5 py-1 text-[10px] font-mono font-bold text-cyan-200">
+                  VISE
+                </span>
+              </div>
+              <h2 className="text-2xl font-black uppercase italic tracking-tight text-white sm:text-3xl">
+                Gardez vos projets en vue
+              </h2>
+              <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
+                VISE vous aide à gérer vos projets et vos finances. Vos clients peuvent consulter l’état d’avancement de leur projet à l’aide d’un code de suivi.
+              </p>
+            </div>
+            <a
+              href="https://vise.youknowgroup.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-cyan-500 px-6 py-3.5 text-xs font-extrabold uppercase tracking-wider text-slate-950 transition-colors hover:bg-cyan-400"
+            >
+              <span>Accéder à VISE</span>
+              <ArrowUpRight size={16} />
+            </a>
+          </div>
+        </motion.div>
 
         {/* Featured Spotlight: Spotlight Application */}
         {spotlightApp && (
